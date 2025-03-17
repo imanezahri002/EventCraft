@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="./assets/css/globals.css" />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
-<body class="min-h-screen bg-[url('/images/bg7.jpg')] bg-cover bg-center h-screen ">
+<body class="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-gray-100">
     <!-- Navigation -->
     <nav class="sticky top-0 z-50 backdrop-blur-lg bg-black/20 border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex items-center justify-between h-16">
                 <a href="/" class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
-                    EventCraft
+                    Eventler
                 </a>
                 <div class="hidden md:flex items-center gap-8">
                     <a href="/" class="text-sm text-gray-300 hover:text-white transition-colors">Home</a>
@@ -31,66 +31,72 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <main class="flex-grow">
-        <div class="min-h-[80vh] flex items-center">
-            <div class="max-w-7xl mx-auto px-6 py-20">
-                <div class="text-center space-y-8">
-                    <h1 class="text-6xl md:text-7xl font-bold">
-                        <span class="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent glow">
-                            Experience Events
-                        </span>
-                        <br />
-                        <span class="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent glow">
-                            Like Never Before
-                        </span>
+    <!-- Main Content -->
+    <main class="flex-grow py-16">
+        <div class="max-w-md mx-auto px-6">
+            <div class="bg-gray-900/50 backdrop-blur-xl p-8 rounded-2xl border border-gray-800 shadow-xl">
+                <div class="text-center mb-8">
+                    <h1 class="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent mb-2">
+                        Create an account
                     </h1>
-                    <p class="text-xl text-gray-400 max-w-2xl mx-auto font-bold tracking-tight glow">
-                        Discover and attend amazing events in your area. From tech conferences to music festivals, find your next
-                        unforgettable experience.
-                    </p>
-                    <div class="mt-8">
-                        <a href="/events"
-                            class="inline-block px-8 py-4 text-lg font-medium rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white transition-colors">
-                            Explore Events
-                        </a>
-                    </div>
+                    <p class="text-gray-400 text-sm">Enter your details below to create your account</p>
                 </div>
+
+                <form id="signupForm" method="POST" class="space-y-6">
+
+                    <div class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
+                            <input id="name" name="name" type="text" placeholder="John Doe" required
+                                class="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors placeholder-gray-500" />
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                            <input id="email" name="email" type="email" placeholder="m@example.com" required
+                                class="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors placeholder-gray-500" />
+                        </div>
+
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-300 mb-1">Password</label>
+                            <input id="password" name="password" type="password" required
+                                class="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors" />
+                        </div>
+
+                        <div>
+                            <label for="role" class="block text-sm font-medium text-gray-300 mb-1">Role</label>
+                            <select id="role" name="role" required
+                                class="w-full px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-colors">
+                                <option value="">Choose your role</option>
+                                <option value="organisator">Organizer</option>
+                                <option value="user">Client</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full py-2 px-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-lg font-medium transition-colors cursor-pointer">
+                        Create Account
+                    </button>
+
+                    <div class="relative my-8">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-gray-800"></div>
+                        </div>
+                        <div class="relative flex justify-center text-xs uppercase">
+                            <span class="bg-gray-900 px-4 text-gray-400"></span>
+                        </div>
+                    </div>
+
+                    <p class="text-center text-sm text-gray-400">
+                        Already have an account?
+                        <a href="/signin" class="text-purple-400 hover:text-purple-300 transition-colors ml-1 cursor-pointer">
+                            Sign in
+                        </a>
+                    </p>
+                </form>
             </div>
         </div>
-        <!-- Services Section -->
-<section class="py-20 bg-gray-900 text-gray-300">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent mb-12">
-            Nos Services
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Card 1 -->
-            <div class="p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700">
-                <h3 class="text-xl font-semibold mb-3 text-white">Nos Engagements</h3>
-                <p class="text-gray-400">Billetterie officielle<br>Des tickets 100% authentiques</p>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700">
-                <h3 class="text-xl font-semibold mb-3 text-white">Assurance Qualité</h3>
-                <p class="text-gray-400">Paiement 100% sécurisé</p>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700">
-                <h3 class="text-xl font-semibold mb-3 text-white">Organisation</h3>
-                <p class="text-gray-400">Offrir une interface interactive pour faciliter à l'organisateur de publier son event</p>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="p-6 bg-gray-800 rounded-xl shadow-lg border border-gray-700">
-                <h3 class="text-xl font-semibold mb-3 text-white">Service Client</h3>
-                <p class="text-gray-400">Trouvez immédiatement des réponses à vos questions grâce à notre service de support 24h/7j</p>
-            </div>
-        </div>
-    </div>
-</section>
     </main>
 
     <!-- Footer -->
@@ -139,10 +145,11 @@
             </div>
 
             <div class="mt-8 pt-8 border-t border-gray-800 text-center text-sm text-gray-400">
-                © 2025 Eventler. All rights reserved.
+                © 2025 EventCraft. All rights reserved.
             </div>
         </div>
     </footer>
 </body>
+
 
 </html>
